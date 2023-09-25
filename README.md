@@ -1,7 +1,7 @@
 # TPEWeb2
 
 ## Integrantes del grupo:
->* Mailen Martinez // email: mailenmartinez199@gmail.com
+>* Mailen Martinez // email: mailenmartinez199@gmail.com y Francisco Bruno // email: fb8174127@gmail.com
 ## Temática del TPE:
 **Tienda de videojuegos**
 >La base de datos es sobre una tienda de videojuegos en la cual encontraremos 2 categorias, juegos gratuitos y juegos pagos.

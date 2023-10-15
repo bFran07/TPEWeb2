@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1b2838;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.editarJuegoContainer{
+    margin-top: 5%;
+}
+
+.gameContainer{
+    margin-top: 10%;
+    text-align: center;
+    gap: 5px;
+}
+
+.agregarjuego-btn{
+    width: 150px;
+    margin:0 auto;
+    text-align: center;
+}
+
+.editar-btn{
+    padding-right: 20%;
+}
+
+.b-line{
+    height: 2px;
+    width: 100%;
+    background-color: grey;
+}
+
+.admin-panel{
+    transition: .5s;
+}
+.img-container{
+    margin: auto;
+    height: 500px;
+    width: 500px;
+}
+.imgEditar{
+    width: 100%;
+    height: 100%;
+}
+.admin-panel:hover{
+    text-shadow: 0px 0px 15px rgba(42,179,80,1);
+}
+
+.game-card{
+    color:#c7d5e0;
+    background-color: #2a475e;
+    border: .1px solid #c7d5e081;
+}
+
+.textEdit{
+    text-align: center;
+    color: #c7d5e081;
+}

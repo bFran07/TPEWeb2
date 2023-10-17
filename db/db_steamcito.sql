@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2023 a las 16:36:40
+-- Tiempo de generación: 17-10-2023 a las 22:48:35
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -65,6 +65,27 @@ INSERT INTO `game` (`id_game`, `name`, `price`, `description`, `image`, `id_cate
 (16, 'Mario Bross', 0, 'Un juego clásico nunca pasa de moda', 'mariobross.jpg', 1),
 (20, 'FIFA 23', 4500, 'El juego es el último bajo la asociación entre EA y FIFA. Los futuros juegos de fútbol de EA sin la inclusión del nombre FIFA se nombrarán bajo el nombre de EA Sports Football Club.', 'fifa23.jpg', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id_user`, `email`, `password`, `admin`) VALUES
+(4, 'maimartinez@gmail.com', '$2y$10$mtAKmPDVaaOxyc3Bx/Afn.xBETR.a7Bl/aEtBUk.VvL52reHmdBkG', 1),
+(7, 'liomessi@gmail.com', '$2y$10$sV81SAUgJ6FwS4.2HDwNveVe3QfQwaQU5Crs2tzcHTFqbvuXE4cBS', 0);
+
 --
 -- Índices para tablas volcadas
 --
@@ -83,6 +104,12 @@ ALTER TABLE `game`
   ADD KEY `id_category` (`id_category`);
 
 --
+-- Indices de la tabla `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -97,6 +124,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `game`
   MODIFY `id_game` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

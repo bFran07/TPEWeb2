@@ -14,7 +14,20 @@
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
     <a href="home" class="text-decoration-none"><h5 class="text-white h4">HOME</h5></a>
+    {if $isAdmin}
     <span class="text-muted"><a href="adminPanel" class="text-decoration-none text-success admin-panel">ADMIN PANEL <i class="fa-solid fa-screwdriver-wrench"></i></a></span>
+    {/if}
+    {if $isLogged}
+      <p class="text-white">
+         <a href="logout"> 
+            Logout
+          </a>
+      </p>
+    {else}
+      <p class="text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Login
+      </p>
+    {/if}
   </div>
   <div class="b-line"></div>
 </div>
@@ -25,3 +38,37 @@
     </button>
   </div>
 </nav>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="login" method="POST">
+            <div class="mb-4">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+            <div class="py-4 text-center">
+                <p class="fw-bold">O</p>
+                <a href="signUp">Registrarse</a>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

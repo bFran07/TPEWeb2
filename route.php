@@ -1,7 +1,7 @@
 <?php
     require_once "controller/GamesController.php";
     //require_once "Controller/CategoryController.php";
-    //require_once "Controller/LoginController.php";
+    require_once "Controller/UsersController.php";
 
     define('BASE_URL' , '//' . $_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/' );
 
@@ -15,7 +15,7 @@
 
     $gamesController = new GamesContoller();
     //$categoryController = new CategoryController();
-    //$loginController = new LoginController();
+    $usersController = new UsersController();
 
 
     $params = explode('/', $action);
@@ -39,6 +39,30 @@
             break;
         case 'game':
             $gamesController->viewGameController($params[1]);
+            break;
+        case 'signUp':
+            $usersController->viewSignUp();
+            break;
+        case 'sendSignUp':
+            $usersController->createUser();
+            break;
+        case'adminPanel':
+            $usersController->AdminPanel();
+            break;
+        case 'promoteUser':
+            $usersController->promoteUser($params[1]);
+            break;
+        case 'demoteUser':
+            $usersController->demoteUser($params[1]);
+            break;
+        case 'deleteUser':
+            $usersController->deleteUser($params[1]);
+            break;
+        case'login':
+            $usersController->verifyLogin();
+            break;
+        case 'logout':
+            $usersController->logout();
             break;
         default: 
             echo('404 Page not found'); 

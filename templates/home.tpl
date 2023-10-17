@@ -8,9 +8,10 @@
 </div>
 
 
-
-<div class="agregarjuego-btn mt-4">
-    {include file='agregarJuego.tpl'}
-</div>
+{if $isAdmin}
+    <div class="agregarjuego-btn mt-4">
+        {include file='agregarJuego.tpl'}
+    </div>
+{/if}
 
 {include file="footer.tpl"}

@@ -8,10 +8,14 @@
       <h5 class="card-title">PRECIO:{$game['price']}</h5>
     {/if}  
       <p class="card-text">{$game['description']}</p>
-      {if $category['id_category']==2}
-          <a href="#" class="btn btn-primary">COMPRAR</a>
+      {if $isLogged}
+          {if $category['id_category']==2}
+              <a href="#" class="btn btn-primary">COMPRAR</a>
+          {else}
+              <a href="#" class="btn btn-primary">DESCARGAR</a>
+          {/if}
       {else}
-          <a href="#" class="btn btn-primary">DESCARGAR</a>
+          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión </a>
       {/if}
       <p>Categoria: {$category['category']}</p>
     </div>

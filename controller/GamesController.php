@@ -21,11 +21,18 @@
 
         function showHome(){
 
-            $products = $this->model->getGames();
+            $games = $this->model->getGames();
             $categories = $this->model->getCategories();
-            $this->view->home($products, $categories);
-            
-
+            session_start();
+            if(isset($_SESSION['usuario'])){
+                $this->view->home($games, $categories,$is_logged=$_SESSION['logged'],$is_admin=$_SESSION['isAdmin']);
+            }else{
+                 $_SESSION['logged']=false;
+                 $_SESSION['isAdmin']=false;
+                 $_SESSION['usuario'] = '';
+                 $_SESSION['id_usuario'] = '';
+                 $this->view->home($games, $categories,$is_logged=$_SESSION['logged'],$id_admin=$_SESSION['isAdmin']);
+            }
         }
 
         function addGame(){
@@ -64,7 +71,13 @@
         function viewGameController($id){
             $game = $this->model->getGame($id);
             $category = $this->model->getCategory($game['id_category']);
-            $this->view->viewGame($category,$game);
+            session_start();
+            if(isset($_SESSION['usuario'])){
+                $this->view->viewGame($category,$game, $is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged']);
+            }
+            else{
+                $this->view->viewGame($category,$game, $is_admin=$_SESSION['isAdmin'],$is_logged=$_SESSION['logged']);
+            }
         }
 
     }

@@ -14,13 +14,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-3"> 
-                    <a href="deleteGame/{$game['id_game']}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    {if $isAdmin}<a href="deleteGame/{$game['id_game']}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>{/if}
                 </div>
                 <div class="col-6">
                     <a href="game/{$game['id_game']}" class="btn btn-primary">Ver mas</a>
                 </div>
                 <div class="col-3"> 
-                    <a href="editGame/{$game['id_game']}" class="btn btn-warning text-white"><i class="fa-solid fa-pen-to-square"></i></a>
+                    {if $isAdmin}<a href="editGame/{$game['id_game']}" class="btn btn-warning text-white"><i class="fa-solid fa-pen-to-square"></i></a>{/if}
                 </div> 
             </div>
         </div>
